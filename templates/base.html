@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>XPath docs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='docs.css') }}" type="text/css">
+</head>
+<body>
+<h1>XPath</h1>
+<div id='main-container'>
+    <div id="left-col">
+        {% include 'nav.html' %}
+    </div>
+    <div id="right-col">
+        {% block main %}{% endblock %}
+    </div>
+</div>
+</body>
+<script src="{{ url_for('static', filename='docs.js') }}"></script>
+</html>
+

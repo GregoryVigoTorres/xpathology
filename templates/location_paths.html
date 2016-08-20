@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block main %}
+<h2>Location Paths</h2>
+<p>
+    A location path selects a set of nodes relative to the context node.
+    When a location path expression is evaluated it returns a node set selected by the location path.
+    Location paths can contain recursive expressions for filtering nodes.
+</p>
+
+<p>Location paths are the most import part of XPath</p>
+<p>Location paths are expressions</p>
+
+<div class="list-container">
+    <p class="list-title show-hide-siblings">&gt; Unabbreviated LPs (show)</p>
+    <ul class="long-list hidden show-hide">
+        <li class="no-hlite">/ <em>selects the document root (which is always the parent of the document element)</em></li>
+        <li class="no-hlite">/descendant::para <em>selects all the para elements in the same document as the context node</em></li>
+        <li class="no-hlite">attribute::name <em>selects the name attribute of the context node</em></li>
+        <li class="no-hlite">attribute::* <em>selects all the attributes of the context node</em></li>
+        <li class="no-hlite">self::para <em>selects the context node if it is a para element, and otherwise selects nothing</em></li>
+
+        <li ><h4>Children</h4></li>
+        <li class="no-hlite">child::para <em>selects the para element children of the context node</em></li>
+        <li class="no-hlite">child::* <em>selects all element children of the context node</em></li>
+        <li class="no-hlite">child::text() <em>selects all text node children of the context node</em></li>
+        <li class="no-hlite">child::node() <em>selects all the children of the context node, whatever their node type</em></li>
+        <li class="no-hlite">child::chapter/descendant::para <em>selects the para element descendants of the chapter element children of the context node</em></li>
+        <li class="no-hlite">child::*/child::para <em>selects all para grandchildren of the context node</em></li>
+        <li class="no-hlite">child::para[attribute::type="warning"] <em>selects all para children of the context node that have a type attribute with value warning</em></li>
+        <li class="no-hlite">child::para[attribute::type='warning'][position()=5] <em>selects the fifth para child of the context node that has a type attribute with value warning</em></li>
+        <li>
+            <ul>
+                <li class="no-hlite">child::para[position()=1] <em>selects the first para child of the context node</em></li>
+                <li class="no-hlite">child::para[position()=last()] <em>selects the last para child of the context node</em></li>
+                <li class="no-hlite">child::para[position()=last()-1] <em>selects the last but one para child of the context node</em></li>
+                <li class="no-hlite">child::para[position()>1] <em>selects all the para children of the context node other than the first para child of the context node</em></li>
+                <li class="no-hlite">child::para[position()=5][attribute::type="warning"] <em>selects the fifth para child of the context node if that child has a type attribute with value warning</em></li>
+                <li class="no-hlite">/child::doc/child::chapter[position()=5]/child::section[position()=2] <em>selects the second section of the fifth chapter of the doc document element</em></em></li>
+            </ul>
+        </li>
+        <li class="no-hlite">child::chapter[child::title='Introduction'] <em>selects the chapter children of the context node that have one or more title children with string-value equal to Introduction</em></li>
+        <li class="no-hlite">child::chapter[child::title] <em>selects the chapter children of the context node that have one or more title children</em></li>
+        <li class="no-hlite">child::*[self::chapter or self::appendix] <em>selects the chapter and appendix children of the context node</em></li>
+        <li class="no-hlite">child::*[self::chapter or self::appendix][position()=last()] <em>selects the last chapter or appendix child of the context node</em></li>
+
+        <li><h4>Descendant</h4></li>
+        <li class="no-hlite">descendant::para <em>selects the para element descendants of the context node</em></li>
+        <li class="no-hlite">/descendant::olist/child::item <em>selects all the item elements that have an olist parent and that are in the same document as the context node</em></li>
+        <li class="no-hlite">descendant-or-self::para <em>selects the para element descendants of the context node and, if the context node is a para element, the context node as well</em></li>
+        <li class="no-hlite">/descendant::figure[position()=42] <em>selects the forty-second figure element in the document</em></li>
+
+        <li><h4>Other</h4></li>
+        <li class="no-hlite">ancestor::div <em>selects all div ancestors of the context node</em></li>
+        <li class="no-hlite">ancestor-or-self::div <em>selects the div ancestors of the context node and, if the context node is a div element, the context node as well</em></li>
+        <li class="no-hlite">following-sibling::chapter[position()=1] <em>selects the next chapter sibling of the context node</em></li>
+        <li class="no-hlite">preceding-sibling::chapter[position()=1] <em>selects the previous chapter sibling of the context node</em></li>
+    </ul>
+</div>
+
+{% endblock %}
+
