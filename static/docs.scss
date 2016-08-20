@@ -1,3 +1,5 @@
+$gray-border: #4B4B4B;
+
 body {
     background-color: #2E2E2E;
     color: white;
@@ -14,7 +16,7 @@ body {
 // nav
 #left-col {
     padding-right: 3rem;
-    border-right: 2px solid #4B4B4B;
+    border-right: 2px solid $gray-border;
     flex: 1 1 15%;
 }
 
@@ -49,7 +51,6 @@ ul {
 
 li {
     font-weight: 800;
-    color: chartreuse;
 
     em {
         font-weight: 400;
@@ -87,6 +88,24 @@ ul.long-list {
         em {
             font-size: 85%;
         }
+    }
+}
+
+table {
+    border-collapse: collapse;
+
+    td {
+        border-bottom: 1px solid $gray-border;
+    }
+}
+
+#axes-table {
+    td {
+        padding: 7px 0 7px 0;
+    }
+
+    td:first-of-type {
+        min-width: 15%;
     }
 }
 

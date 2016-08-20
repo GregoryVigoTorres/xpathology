@@ -18,6 +18,11 @@ def reference():
 def location_paths():
     return render_template('location_paths.html', title='Location Paths')
 
+@app.route('/axes')
+def axes():
+    return render_template('axes.html', title='Axes')
+
+
 
 
 if __name__ == '__main__':

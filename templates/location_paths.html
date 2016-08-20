@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
 {% block main %}
 <p>
-    A location path selects a set of nodes relative to the context node.
+    Location paths are the most import part of XPath.
+    A location path is an expression that selects a set of nodes relative to the context node.
     When a location path expression is evaluated, it <strong>returns a node set</strong> selected by the location path.
     Location paths can contain recursive expressions for filtering nodes.
 </p>
 
-<p>Location paths are the most import part of XPath</p>
-<p>Location paths are expressions</p>
+<h4>syntax</h4>
+<p>
+    <code>axis-name::node-test[expression/predicate]/next-location-path</code>
+</p>
+<p>
+    Or using abbreviated syntax e.g.
+    <code>div/para[@class="item"]</code>
+</p>
+<p>
+    Axis name and node test separated by a double colon,
+    followed by zero or more expressions each in square brackets.
+</p>
+<p>
+    e.g. in <code>child::para[position()=1]</code>,
+    child is the name of the axis, para is the node test and <code>[position()=1]</code> is a predicate.
+</p>
+
+<br>
 
 <p>
 Location paths can be relative or absolute.
@@ -47,11 +64,13 @@ Each node in the node set returned is used as a context node for the next step.
 </div>
 
 <p>
-    Using abbreviated syntax, <code>child::</code> can be omitted from a location step.
-    <em>In effect, child is the default <strong>axis</strong>.</em>
+    Using abbreviated syntax, <code>child::</code> can be omitted, because it becomes the default <strong>axis</strong>.
 </p>
 <p>
-    e.g. <code>div/para</code> is the same as <code>child::div/child::para</code>.
+    e.g.
+</p>
+<p>
+    <code>div/para</code> is the same as <code>child::div/child::para</code>.
 </p>
 
 <p>@ is attribute e.g. <code>@class</code></p>

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block main %}
+<table id="axes-table">
+    <tbody>
+        <tr>
+            <td><code>child</code></td>
+            <td>children of the context node</td>
+        </tr>
+        <tr>
+            <td><code>descendant</code></td>
+            <td>Child or a child of a child and so on.
+                The descendant axis never contains attribute or namespace nodes</td>
+        </tr>
+        <tr>
+            <td><code>parent</code></td>
+            <td>parent or none</td>
+        </tr>
+        <tr>
+            <td><code>ancestor</code></td>
+            <td>The parent of the context node and the parent's parent and so on.
+                Always includes the root node, unless the context node is the root node</td>
+        </tr>
+        <tr>
+            <td><code>following-sibling</code></td>
+            <td>If the context node is an attribute node or namespace node, the following-sibling axis is empty</td>
+        </tr>
+        <tr>
+            <td><code>preceding-sibling</code></td>
+            <td>If the context node is an attribute node or namespace node, the preceding-sibling axis is empty</td>
+        </tr>
+        <tr>
+            <td><code>following</code></td>
+            <td>All nodes after the context node in document order,
+                excluding descendants, attribute nodes and namespace nodes</td>
+        </tr>
+        <tr>
+            <td><code>preceding</code></td>
+            <td>All nodes before the context node in document order,
+                excluding ancestors, attribute nodes and namespace nodes</td>
+        </tr>
+        <tr>
+            <td><code>attribute</code></td>
+            <td>Empty unless the context node is an element</td>
+        </tr>
+        <tr>
+            <td><code>namespace</code></td>
+            <td>Empty unless the context node is an element</td>
+        </tr>
+        <tr>
+            <td><code>self</code></td>
+            <td>The context node itself</td>
+        </tr>
+        <tr>
+            <td><code>descendant-or-self</code></td>
+            <td>The context node and its descendants</td>
+        </tr>
+        <tr>
+            <td><code>ancestor-or-self</code></td>
+            <td>The context node and its ancestors. The ancestor axis always includes the root node</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
