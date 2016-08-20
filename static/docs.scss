@@ -65,9 +65,14 @@ li {
     display: none;
 }
 
+.list-container {
+    margin: 2rem 0 2rem 0;
+}
+
 .list-title {
     cursor: default;
     font-weight: 800;
+    color: yellow;
 
     &:hover {
         text-decoration: underline;
