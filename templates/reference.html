@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% block main %}
+
+<p id='context'>A <strong>context</strong> consists of</p>
+    <ul>
+        <li>a node (the <strong>context node</strong>)</li>
+        <li>a pair of non-zero positive integers (the <strong>context position</strong> and the <strong>context size</strong>)</li>
+        <li>a set of variable bindings</li>
+        <li>a function library</li>
+        <li>the set of namespace declarations in scope for the expression</li>
+    </ul>
+</p>
+
 <p id='node-types'>Node Types:
     <ul>
         <li>element</li>
@@ -14,16 +25,6 @@
         <li>boolean</li>
         <li>number (floating point)</li>
         <li>string (UCS characters)</li>
-    </ul>
-</p>
-
-<p id='context'>A context consists of</p>
-    <ul>
-        <li>a node (the <strong>context node</strong>)</li>
-        <li>a pair of non-zero positive integers (the <strong>context position</strong> and the <strong>context size</strong>)</li>
-        <li>a set of variable bindings</li>
-        <li>a function library</li>
-        <li>the set of namespace declarations in scope for the expression</li>
     </ul>
 </p>
 <h3 class='question'>WTF is context-position and context-size?</h3>
