@@ -4,19 +4,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title='Overview')
 
 @app.route('/expressions')
 def expressions():
-    return render_template('expressions.html')
+    return render_template('expressions.html', title='Expressions')
 
 @app.route('/reference')
 def reference():
-    return render_template('reference.html')
+    return render_template('reference.html', title='Reference')
 
 @app.route('/locationpaths')
 def location_paths():
-    return render_template('location_paths.html')
+    return render_template('location_paths.html', title='Location Paths')
 
 
 

@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% block main %}
-<h2>Location Paths</h2>
 <p>
     A location path selects a set of nodes relative to the context node.
-    When a location path expression is evaluated it returns a node set selected by the location path.
+    When a location path expression is evaluated, it <strong>returns a node set</strong> selected by the location path.
     Location paths can contain recursive expressions for filtering nodes.
 </p>
 
@@ -11,7 +10,7 @@
 <p>Location paths are expressions</p>
 
 <div class="list-container">
-    <p class="list-title show-hide-siblings">&gt; Unabbreviated LPs (show)</p>
+    <p class="list-title show-hide-siblings">&gt; Unabbreviated location paths (show)</p>
     <ul class="long-list hidden show-hide">
         <li class="no-hlite">/ <em>selects the document root (which is always the parent of the document element)</em></li>
         <li class="no-hlite">/descendant::para <em>selects all the para elements in the same document as the context node</em></li>
