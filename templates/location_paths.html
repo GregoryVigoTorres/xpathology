@@ -20,7 +20,7 @@
     followed by zero or more expressions each in square brackets.
 </p>
 <p>
-    e.g. in <code>child::para[position()=1]</code>, or <code>para[position()=1],
+    e.g. in <code>child::para[position()=1]</code>, or <code>para[position()=1]</code>,
     child is the name of the axis, para is the node test and <code>[position()=1]</code> is a predicate.
     With abbreviated syntax, child:: is implicit default and should be omitted.
 </p>
@@ -37,29 +37,39 @@ Each node in the node set returned is used as a context node for the next step.
 
 <!-- abbreviated LPs -->
 <div class="list-container">
-    <p class="list-title show-hide-siblings">&gt; Abbreviated location path reference (show)</p>
+    <h3 class="list-title show-hide-siblings">&sect; Abbreviated location path reference (show)</h3>
     <ul class="long-list hidden show-hide">
         <li>para <em>selects the para element children of the context node</em></li>
-        <li> * <em>selects all element children of the context node</em></li>
-        <li>text() <em>selects all text node children of the context node</em></li>
+        <li>*<em>selects all element children of the context node</em></li>
+        <li>@*<em>selects all the attributes of the context node</em></li>
         <li>@name <em>selects the name attribute of the context node</em></li>
-        <li>@* <em>selects all the attributes of the context node</em></li>
-        <li>para[1] <em>selects the first para child of the context node</em></li>
-        <li>para[last()] <em>selects the last para child of the context node</em></li>
-        <li>/*para <em>selects all para grandchildren of the context node</em></li>
-        <li>*doc/chapter[5]/section[2] <em>selects the second section of the fifth chapter of the doc</em></li>
-        <li>chapter//para <em>selects the para element descendants of the chapter element children of the context node</em></li>
-        <li>/*para <em>selects all the para descendants of the document root and thus selects all para elements in the same document as the context node</em></li>
-        <li>/*olist/item <em>selects all the item elements in the same document as the context node that have an olist parent</em></li>
         <li>. <em>selects the context node</em></li>
         <li>.//para <em>selects the para element descendants of the context node</em></li>
         <li>.. <em>selects the parent of the context node</em></li>
         <li>../@lang <em>selects the lang attribute of the parent of the context node</em></li>
+        <li>text() <em>selects all text node children of the context node</em></li>
+        <li>&nbsp;</li>
+
+        <li>/*para <em>selects all para grandchildren of the context node</em></li>
+        <li>//para
+            <em>selects all the para descendants of the document root and thus selects all para elements in the same document
+                as the context node</em>
+        </li>
+        <li>chapter//para <em>selects the para element descendants of the chapter element children of the context node</em></li>
+
+        <li>/*olist/item <em>selects all the item elements in the same document as the context node that have an olist parent</em></li>
+        <li>&nbsp;</li>
+
+        <li>para[1] <em>selects the first para child of the context node</em></li>
+        <li>para[last()] <em>selects the last para child of the context node</em></li>
+        <li>chapter[title] <em>selects the chapter children of the context node that have one or more title children</em></li>
+        <li>chapter[title="Introduction"] <em>selects the chapter children of the context node that have one or more title children with string-value equal to Introduction</em></li>
+        <li>*doc/chapter[5]/section[2] <em>selects the second section of the fifth chapter of the doc</em></li>
+        <li>&nbsp;</li>
+
         <li>para[@type="warning"] <em>selects all para children of the context node that have a type attribute with value warning</em></li>
         <li>para[@type="warning"][5] <em>selects the fifth para child of the context node that has a type attribute with value warning</em></li>
         <li>para[5][@type="warning"] <em>selects the fifth para child of the context node if that child has a type attribute with value warning</em></li>
-        <li>chapter[title="Introduction"] <em>selects the chapter children of the context node that have one or more title children with string-value equal to Introduction</em></li>
-        <li>chapter[title] <em>selects the chapter children of the context node that have one or more title children</em></li>
         <li>employee[@secretary and @assistant] <em>selects all the employee children of the context node that have both a secretary attribute and an assistant attribute</em></li>
     </ul>
 </div>
@@ -96,7 +106,7 @@ Each node in the node set returned is used as a context node for the next step.
 
 <!-- unabbreviated LPs -->
 <div class="list-container">
-    <p class="list-title show-hide-siblings">&gt; Unabbreviated location path reference (show)</p>
+    <h3 class="list-title show-hide-siblings">&sect; Unabbreviated location path reference (show)</h3>
     <ul class="long-list hidden show-hide">
         <li class="no-hlite">/ <em>selects the document root (which is always the parent of the document element)</em></li>
         <li class="no-hlite">/descendant::para <em>selects all the para elements in the same document as the context node</em></li>
