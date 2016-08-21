@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block main %}
-<h2>Introduction</h2>
 <p class='introduction'>
     The primary purpose of XPath is to address parts of an XML document.
     In support of this primary purpose, it also provides basic facilities for manipulation of strings, numbers and booleans.
@@ -16,4 +15,8 @@
     XPath fully supports XML Namespaces [XML Names].
     An <strong>expanded-name</strong> contains a local part and a possibly null URI namespace.
 </p>
+<p>
+<a href="{{ url_for('location_paths') }}">Location paths</a> are probably the most important thing to know about XPath
+</p>
+
 {% endblock %}
