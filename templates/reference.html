@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 {% block main %}
-<p id='context'>A <strong>context</strong> consists of</p>
+<h3 id="comparisons">Boolean comparisons</h3>
+<ul>
+    <li>in order of precedence</li>
+    <li><code>or</code></li>
+    <li><code>and</code></li>
+    <li><code>= !=</code></li>
+    <li><code><=, <, >= ></code></li>
+</ul>
+<p>
+    Operators are left accumulative 3 > 2 > 1 is the same as (3 > 2) > 1.
+    The string-values of items are passed to boolean or number functions for comparison, basically.
+</p>
+
+<br>
+<h3 id='context'>A <strong>context</strong> consists of</h3>
     <ul>
         <li>a node (the <strong>context node</strong>)</li>
         <li>a pair of non-zero positive integers (the <strong>context position</strong> and the <strong>context size</strong>)</li>
@@ -10,15 +24,39 @@
     </ul>
 </p>
 
-<p id='node-types'>Node Types:
+<br>
+<h3 id='node-sets'>Node Set</h3>
+<ul>
+    <li>A node set is returned by a location path expression.</li>
+    <li>the | operator can be used to join node sets</li>
+</ul>
+
+<br>
+<h3 id='node-types'>Node Types</h3>
     <ul>
         <li>element</li>
         <li>attribute</li>
         <li>text</li>
     </ul>
-</p>
 
-<p id='object-types'>Object Types</p>
+<br>
+<h3 id="numbers">Numbers</h3>
+<p>
+    Numbers are floating point numbers including positive negative infinity,
+    positive and negative 0,
+    and Nan.
+</p>
+<p>operators</p>
+<ul>
+    <li>+</li>
+    <li>-</li>
+    <li><code>div</code></li>
+    <li><code>mod</code></li>
+</ul>
+<p>The - operator usually needs to be surrounded by whitespace</p>
+
+<br>
+<h3 id='object-types'>Object Types</h3>
     <ul>
         <li>node-set (unordered collection without duplicates)</li>
         <li>boolean</li>
