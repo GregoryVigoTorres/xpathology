@@ -12,16 +12,17 @@
     <code>axis-name::node-test[expression/predicate]/next-location-path</code>
 </p>
 <p>
-    Or using abbreviated syntax e.g.
-    <code>div/para[@class="item"]</code>
+    Or using abbreviated syntax
+    <code>node-test[expression/predicate]</code>
 </p>
 <p>
     Axis name and node test separated by a double colon,
     followed by zero or more expressions each in square brackets.
 </p>
 <p>
-    e.g. in <code>child::para[position()=1]</code>,
+    e.g. in <code>child::para[position()=1]</code>, or <code>para[position()=1],
     child is the name of the axis, para is the node test and <code>[position()=1]</code> is a predicate.
+    With abbreviated syntax, child:: is implicit default and should be omitted.
 </p>
 
 <br>
@@ -36,7 +37,7 @@ Each node in the node set returned is used as a context node for the next step.
 
 <!-- abbreviated LPs -->
 <div class="list-container">
-    <p class="list-title show-hide-siblings">&gt; Abbreviated location paths (show)</p>
+    <p class="list-title show-hide-siblings">&gt; Abbreviated location path reference (show)</p>
     <ul class="long-list hidden show-hide">
         <li>para <em>selects the para element children of the context node</em></li>
         <li> * <em>selects all element children of the context node</em></li>
@@ -95,7 +96,7 @@ Each node in the node set returned is used as a context node for the next step.
 
 <!-- unabbreviated LPs -->
 <div class="list-container">
-    <p class="list-title show-hide-siblings">&gt; Unabbreviated location paths (show)</p>
+    <p class="list-title show-hide-siblings">&gt; Unabbreviated location path reference (show)</p>
     <ul class="long-list hidden show-hide">
         <li class="no-hlite">/ <em>selects the document root (which is always the parent of the document element)</em></li>
         <li class="no-hlite">/descendant::para <em>selects all the para elements in the same document as the context node</em></li>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block main %}
+<p>Remember <code>axis-name::NODE_TEST[expression]</code></p>
+<p>Every axis has a principal node type.</p>
+<p>
+    If the axis can contain elements, its type is <strong>element</strong>.
+    Otherwise, it can be either
+</p>
+<ul>
+    <li>attribute, for the attribute axis</li>
+    <li>namespace, for the namespace axis</li>
+</ul>
+
+<p>
+    A node test is true when the name matches the qualified name of a node, e.g. <code>child::p</code> selects child p elements.
+</p>
+<p>
+    * matches all nodes
+</p>
+<p>
+    Node test text() is true for text nodes, e.g. <code>child::text()</code> selects text nodes.
+{% endblock %}

@@ -23,6 +23,22 @@ def axes():
     return render_template('axes.html', title='Axes')
 
 
+@app.route('/nodetests')
+def node_tests():
+    return render_template('node_tests.html', title='Node Tests')
+
+
+@app.route('/predicates')
+def predicates():
+    return render_template('predicates.html', title='Predicates')
+
+
+@app.route('/functioncalls')
+def function_calls():
+    return render_template('function_calls.html', title='Function Calls')
+
+
+
 
 
 if __name__ == '__main__':

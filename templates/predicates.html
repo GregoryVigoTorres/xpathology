@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block main %}
+<p>
+    An axis is either forward or backward.
+    <strong>A predicate filters a node-set with respect to an axis to produce a new node-set</strong>
+</p>
+<p>
+    The node set is filtered using the predicate to produce a new node set.
+    If the predicate is true, the node is included in the new node set.
+</p>
+<br>
+<p>
+tl;dr Predicates return booleans
+</p>
+<p><em>from the spec</em>
+<p>
+    A PredicateExpr is evaluated by evaluating the Expr and converting the result to a boolean.
+    If the result is a number, the result will be converted to true if the number is equal to the context position and will be converted to false otherwise;
+    if the result is not a number, then the result will be converted as if by a call to the boolean function.
+    Thus a location path <code>para[3]</code> is equivalent to <code>para[position()=3]</code>.
+</p>
+
+{% endblock %}
