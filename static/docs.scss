@@ -34,7 +34,12 @@ a {
 }
 
 h1 {
-    margin: 0 0 0 0;
+    margin: 0 0 1rem 0;
+
+    code {
+        padding: 0 0 0 3rem;
+        color: #7F7F7F;
+    }
 }
 
 h2 {
@@ -74,6 +79,7 @@ li {
     cursor: default;
     font-weight: 800;
     color: yellow;
+    text-align: left;
 
     &:hover {
         text-decoration: underline;
@@ -96,16 +102,30 @@ table {
 
     td {
         border-bottom: 1px solid $gray-border;
+        padding: 7px 0 7px 0;
     }
 }
 
 #axes-table {
-    td {
-        padding: 7px 0 7px 0;
+    td:first-of-type {
+        min-width: 15%;
+    }
+}
+
+.function-table {
+    th {
+        text-align: left;
+    }
+
+    td ul {
+        list-style: disc outside;
+        li {
+            font-weight: 400;
+        }
     }
 
     td:first-of-type {
-        min-width: 15%;
+        min-width: 30%;
     }
 }
 
