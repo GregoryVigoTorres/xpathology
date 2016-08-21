@@ -65,8 +65,6 @@ ul {
 }
 
 li {
-    // font-weight: 800;
-
     em {
         font-weight: 400;
     }
@@ -75,6 +73,12 @@ li {
         margin: 0;
         color: #51BF54; // green
     }
+}
+
+code {
+    background-color: black;
+    color: #74D561;
+    padding: 2px;
 }
 
 .hidden {
@@ -135,7 +139,25 @@ table {
     }
 
     td:first-of-type {
-        min-width: 30%;
+        white-space: nowrap;
+        padding: 0 1rem 0 0;
+    }
+}
+
+.location-path-table {
+    td:first-of-type {
+        white-space: nowrap;
+        padding: 0 1rem 0 0;
+    }
+
+    td:nth-child(2) {
+        color: #AFAFAF;
+        font-style: italic;
+    }
+
+    .section-header {
+        color: yellow;
+        font-weight: 800;
     }
 }
 
