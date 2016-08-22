@@ -35,92 +35,6 @@ Each location selects a node set relative to a context node.
 Each node in the node set returned is used as a context node for the next step.
 </p>
 
-<!-- abbreviated LPs -->
-<table class='location-path-table'>
-    <thead>
-        <tr>
-            <th class="show-hide-rows" colspan=2>&sect; Abbreviated location path reference (show)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="hidden">
-            <td>. </td><td>selects the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>.. </td><td>selects the parent of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>*</td><td>selects all element children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>para </td><td>selects the para element children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>@*</td><td>selects all the attributes of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>@name </td><td>selects the name attribute of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>.//para </td><td>selects the para element descendants of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>../@lang </td><td>selects the lang attribute of the parent of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>text() </td><td>selects all text node children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td colspan=2>&nbsp;</td>
-        </tr>
-        <tr class="hidden">
-            <td>/*para </td><td>selects all para grandchildren of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>//para </td><td>selects all the para descendants of the document root and thus selects all para elements in the same document as the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>chapter//para </td><td>selects the para element descendants of the chapter element children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>/*olist/item </td><td>selects all the item elements in the same document as the context node that have an olist parent</td>
-        </tr>
-        <tr class="hidden">
-            <td colspan=2>&nbsp;</td>
-        </tr>
-        <tr class="hidden">
-            <td>para[1] </td><td>selects the first para child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>para[last()] </td><td>selects the last para child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>chapter[title] </td><td>selects the chapter children of the context node that have one or more title children</td>
-        </tr>
-        <tr class="hidden">
-            <td>chapter[title="Introduction"] </td><td>selects the chapter children of the context node that have one or more title children with string-value equal to Introduction</td>
-        </tr>
-        <tr class="hidden">
-            <td>*doc/chapter[5]/section[2] </td><td>selects the second section of the fifth chapter of the doc</td>
-        </tr>
-        <tr class="hidden">
-            <td colspan=2>&nbsp;</td>
-        </tr>
-        <tr class="hidden">
-            <td>para[@type="warning"] </td><td>selects all para children of the context node that have a type attribute with value warning</td>
-        </tr>
-        <tr class="hidden">
-            <td>para[@type="warning"][5] </td><td>selects the fifth para child of the context node that has a type attribute with value warning</td>
-        </tr>
-        <tr class="hidden">
-            <td>para[5][@type="warning"] </td><td>selects the fifth para child of the context node if that child has a type attribute with value warning</td>
-        </tr>
-        <tr class="hidden">
-            <td>employee[@secretary and @assistant] </td><td>selects all the employee children of the context node that have both a secretary attribute and an assistant attribute</td>
-        </tr>
-    </tbody>
-</table>
-
 <p>
     Using abbreviated syntax, <code>child::</code> can be omitted, because it becomes the default <strong>axis</strong>.
 </p>
@@ -130,6 +44,8 @@ Each node in the node set returned is used as a context node for the next step.
 <p>
     <code>div/para</code> is the same as <code>child::div/child::para</code>.
 </p>
+
+<h2>Abbreviated Syntax</h2>
 
 <p>@ selects an attribute e.g. <code>@class</code></p>
 <p>
@@ -147,158 +63,10 @@ Each node in the node set returned is used as a context node for the next step.
 <p>
     <code>//para[1]</code> selects all descendant para elements that are first children of their parents.
 </p>
+
 <p>
     <code>/descendant::para[1]</code> selects first descendant para element.
 </p>
-
-<!-- unabbreviated LPs -->
-<table class="location-path-table">
-    <thead>
-        <tr>
-            <td class="show-hide-rows">&sect; Unabbreviated location path reference (show)</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="hidden">
-            <td>/ </td>
-            <td>selects the document root (which is always the parent of the document element)</td>
-        </tr>
-        <tr class="hidden">
-            <td>/descendant::para </td>
-            <td>selects all the para elements in the same document as the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>attribute::name </td>
-            <td>selects the name attribute of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>attribute::* </td>
-            <td>selects all the attributes of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>self::para </td>
-            <td>selects the context node if it is a para element, and otherwise selects nothing</td>
-        </tr>
-        <tr class="hidden">
-            <td class="section-header" colspan=2>[Children]</td>
-        </tr>
-        </tr>
-        <tr class="hidden">
-            <td>child::para </td>
-            <td>selects the para element children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::* </td>
-            <td>selects all element children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::text() </td>
-            <td>selects all text node children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::node() </td>
-            <td>selects all the children of the context node, whatever their node type</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::chapter/descendant::para </td>
-            <td>selects the para element descendants of the chapter element children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::*/child::para </td>
-            <td>selects all para grandchildren of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::para[attribute::type="warning"] </td>
-            <td>selects all para children of the context node that have a type attribute with value warning</td>
-        </tr>
-        <tr class="hidden">
-            <td style="font-size: 70%;">child::para[attribute::type='warning'][position()=5] </td>
-            <td>selects the fifth para child of the context node that has a type attribute with value warning</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::para[position()=1] </td>
-            <td>selects the first para child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::para[position()=last()] </td>
-            <td>selects the last para child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::para[position()=last()-1] </td>
-            <td>selects the last but one para child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::para[position()>1] </td>
-            <td>selects all the para children of the context node other than the first para child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td style="font-size: 70%;">child::para[position()=5][attribute::type="warning"] </td>
-            <td>selects the fifth para child of the context node if that child has a type attribute with value warning</td>
-        </tr>
-        <tr class="hidden">
-            <td style="font-size: 70%;">/child::doc/child::chapter[position()=5]/child::section[position()=2] </td>
-            <td>selects the second section of the fifth chapter of the doc document element</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::chapter[child::title='Introduction'] </td>
-            <td>selects the chapter children of the context node that have one or more title children with string-value equal to Introduction</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::chapter[child::title] </td>
-            <td>selects the chapter children of the context node that have one or more title children</td>
-        </tr>
-        <tr class="hidden">
-            <td>child::*[self::chapter or self::appendix] </td>
-            <td>selects the chapter and appendix children of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td style="font-size: 70%;">child::*[self::chapter or self::appendix][position()=last()] </td>
-            <td>selects the last chapter or appendix child of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td class="section-header" colspan=2>[Descendant]</td>
-        </tr>
-        </tr>
-        <tr class="hidden">
-            <td>descendant::para </td>
-            <td>selects all the para elements in the same document as the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>/descendant::olist/child::item </td>
-            <td>selects all the item elements that have an olist parent and that are in the same document as the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>descendant-or-self::para </td>
-            <td>selects the para element descendants of the context node and, if the context node is a para element,
-                the context node as well</td>
-        </tr>
-        <tr class="hidden">
-            <td>/descendant::figure[position()=42] </td>
-            <td>selects the forty-second figure element in the document</td>
-        </tr>
-        <tr class="hidden">
-            <td class="section-header" colspan=2>[Other]</td>
-        </tr>
-        </tr>
-        <tr class="hidden">
-            <td>ancestor::div </td>
-            <td>selects all div ancestors of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>ancestor-or-self::div </td>
-            <td>selects the div ancestors of the context node and,
-                if the context node is a div element, the context node as well</td>
-        </tr>
-        <tr class="hidden">
-            <td>following-sibling::chapter[position()=1] </td>
-            <td>selects the next chapter sibling of the context node</td>
-        </tr>
-        <tr class="hidden">
-            <td>preceding-sibling::chapter[position()=1] </td>
-            <td>selects the previous chapter sibling of the context node</td>
-        </tr>
-    </tbody>
-</table>
 
 {% endblock %}
 

@@ -18,6 +18,10 @@ def reference():
 def location_paths():
     return render_template('location_paths.html', title='Location Paths')
 
+@app.route('/locationpathreference')
+def location_path_reference():
+    return render_template('location_path_reference.html', title='Location Path Reference')
+
 @app.route('/axes')
 def axes():
     return render_template('axes.html', title='Axes')
@@ -36,9 +40,6 @@ def predicates():
 @app.route('/functioncalls')
 def function_calls():
     return render_template('function_calls.html', title='Function Calls')
-
-
-
 
 
 if __name__ == '__main__':

@@ -3,6 +3,7 @@ $hcolor: #6D4B09;
 // $dark-gray: #2E2E2E;
 $header-bg: #3B58DB;
 $dark-gray: #53555E;
+$light-gray: #878787;
 $link-color: #318ABD;
 $strong-color: #C130B5;
 
@@ -112,15 +113,11 @@ code {
     margin: 2rem 0 2rem 0;
 }
 
-.list-title, .show-hide-rows {
+.list-title {
     cursor: default;
     font-weight: 800;
     color: $hcolor;
     text-align: left;
-
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 ul.long-list {
@@ -149,10 +146,11 @@ table {
     }
 }
 
+th {
+    text-align: left;
+}
+
 .function-table {
-    th {
-        text-align: left;
-    }
 
     td ul {
         list-style: disc outside;
@@ -167,14 +165,30 @@ table {
     }
 }
 
+.show-hide-rows {
+    cursor: default;
+    font-weight: 800;
+    padding-left: 2rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .location-path-table {
+    margin: 0 7rem 5rem 0;
+
+    td {
+        padding: 5px 0 5px 0;
+    }
+
     td:first-of-type {
         white-space: nowrap;
         padding: 0 1rem 0 0;
     }
 
     td:nth-child(2) {
-        color: #AFAFAF;
+        color: $light-gray;
         font-style: italic;
     }
 
