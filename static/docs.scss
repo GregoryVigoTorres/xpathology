@@ -1,10 +1,16 @@
 $gray-border: #4B4B4B;
+$hcolor: #6D4B09;
+// $dark-gray: #2E2E2E;
+$header-bg: #3B58DB;
+$dark-gray: #53555E;
+$link-color: #318ABD;
+$strong-color: #C130B5;
 
 body {
-    background-color: #2E2E2E;
-    color: white;
-    margin: 0;
-    padding: .2rem 0 0 0;
+    color: $dark-gray;
+    background-color: white;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     font-size: 22px;
 }
 
@@ -28,17 +34,38 @@ body {
     flex: 2 1 80%;
 }
 
+header {
+    background-color: $header-bg;
+    color: white;
+    padding: 0 0 1rem 0;
+    margin: 0 0 1rem 0;
+
+    h1 {
+        display: inline;
+    }
+
+    code {
+        padding: 0 0 0 3rem;
+        color: #C5C5C5;
+    }
+}
+
 footer {
     text-align: center;
     padding: 2rem 5rem 6rem 5rem;
     margin: 3rem 0 0 0;
-    border: 2px solid $gray-border;
+    border-top: 2px solid $gray-border;
     font-size: 14px;
+
+    #w3c-status, #w3c-source-link {
+        border: 1px solid $gray-border;
+        padding: 1rem;
+    }
 }
 
 a {
     text-decoration: none;
-    color: #61D1FF;
+    color: $link-color;
     font-weight: 800;
     flex: 0 1 auto;
 }
@@ -47,25 +74,12 @@ h1 {
     margin: 0 0 0 0;
 }
 
-header {
-    padding: 0 0 12px 0;
-
-    h1 {
-        display: inline;
-    }
-
-    code {
-        padding: 0 0 0 3rem;
-        color: #7F7F7F;
-    }
-}
-
 h2 {
-    color: yellow;
+    color: $hcolor;
 }
 
 strong {
-    color: orange;
+    color: $strong-color;
 }
 
 ul {
@@ -101,7 +115,7 @@ code {
 .list-title, .show-hide-rows {
     cursor: default;
     font-weight: 800;
-    color: yellow;
+    color: $hcolor;
     text-align: left;
 
     &:hover {
@@ -165,7 +179,7 @@ table {
     }
 
     .section-header {
-        color: yellow;
+        color: $hcolor;
         font-weight: 800;
     }
 }
