@@ -4,8 +4,8 @@ body {
     background-color: #2E2E2E;
     color: white;
     margin: 0;
-    padding: .2rem 2rem 7rem 2rem;
-    font-size: 24px;
+    padding: .2rem 0 0 0;
+    font-size: 22px;
 }
 
 #main-container {
@@ -16,7 +16,7 @@ body {
 
 // nav
 #left-col {
-    padding-right: 3rem;
+    padding: 0 3rem 0 1rem;
     border-right: 2px solid $gray-border;
     flex: 1 1 15%;
     font-size: 18px;
@@ -26,6 +26,14 @@ body {
 #right-col {
     padding-left: 1rem;
     flex: 2 1 80%;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 5rem 6rem 5rem;
+    margin: 3rem 0 0 0;
+    border: 2px solid $gray-border;
+    font-size: 14px;
 }
 
 a {
