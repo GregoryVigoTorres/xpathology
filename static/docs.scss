@@ -22,9 +22,9 @@ body {
 
 // nav
 #left-col {
-    padding: 0 3rem 0 1rem;
+    padding: 0 1rem 0 1rem;
     border-right: 2px solid $gray-border;
-    flex: 1 1 15%;
+    flex: 1 1 20%;
     font-size: 18px;
 }
 
@@ -68,7 +68,6 @@ a {
     text-decoration: none;
     color: $link-color;
     font-weight: 800;
-    flex: 0 1 auto;
 }
 
 h1 {
@@ -109,28 +108,6 @@ code {
     display: none;
 }
 
-.list-container {
-    margin: 2rem 0 2rem 0;
-}
-
-.list-title {
-    cursor: default;
-    font-weight: 800;
-    color: $hcolor;
-    text-align: left;
-}
-
-ul.long-list {
-    li {
-        color: #C1C1C1;
-        padding: 1px 0 10px 0;
-
-        em {
-            font-size: 85%;
-        }
-    }
-}
-
 table {
     border-collapse: collapse;
 
@@ -140,27 +117,18 @@ table {
     }
 }
 
-#axes-table {
-    td:first-of-type {
-        min-width: 15%;
-    }
-}
-
 th {
     text-align: left;
+}
+
+td:first-of-type {
+    white-space: nowrap;
+    padding-right: 1.5rem;
 }
 
 .function-table {
     td ul {
         list-style: disc outside;
-        li {
-            font-weight: 400;
-        }
-    }
-
-    td:first-of-type {
-        white-space: nowrap;
-        padding: 0 1rem 0 0;
     }
 }
 
@@ -177,15 +145,6 @@ th {
 .location-path-table {
     margin: 0 7rem 5rem 0;
 
-    td {
-        padding: 5px 0 5px 0;
-    }
-
-    td:first-of-type {
-        white-space: nowrap;
-        padding: 0 1rem 0 0;
-    }
-
     td:nth-child(2) {
         color: $light-gray;
         font-style: italic;
@@ -195,12 +154,4 @@ th {
         color: $hcolor;
         font-weight: 800;
     }
-}
-
-.no-hlite {
-    color: white;
-}
-
-.question {
-    color: magenta;
 }
