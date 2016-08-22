@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% block main %}
+<table class='function-table'>
+    <thead>
+        <tr><th class="show-hide-rows" colspan=2>&sect; Node Set Functions</th></tr>
+    </thead>
+    <tbody>
+        <tr class="hidden">
+            <td>last()</td>
+            <td>Returns number equal to context size from evaluation context</td>
+        </tr>
+        <tr class="hidden">
+            <td>position()</td>
+            <td><code>div[position()=5]</code> selects 5th div
+                <br>
+                Returns context position as a number from evaluation context</td>
+        </tr>
+        <tr class="hidden">
+            <td>count(<em>&lt;node-set&gt;</em>)</td>
+            <td>Returns number of nodes in node set</td>
+        </tr>
+        <tr class="hidden">
+            <td>id(<em>&lt;object&gt;</em>)</td>
+            <td>tl;dr <code>id("foo")</code> selects the node whose unique ID is foo.
+                <br>
+                <em>from the spec</em>
+                <br>
+                Selects elements by ID.
+                When the argument is a node-set, returns union of set where id is applied to the string-value of each node.
+                When the argument is any other type, it's converted to a string, gets split on whitespace into a list of tokens,
+                and returns a list of nodes whose unique IDs match one of the tokens.
+            </td>
+        </tr>
+        <tr class="hidden">
+            <td>local-name(<em>&lt;node-set?&gt;</em>)</td>
+            <td>returns local part of expanded name for the 1st node in the node-set,
+                the current context node is the default node-set.
+                If the node-set is empty or the node has no expanded name, an empty string is returned.
+            </td>
+        </tr>
+        <tr class="hidden">
+            <td>namespace-uri(<em>&lt;node-set?&gt;</em>)</td>
+            <td>
+                Returns namespace-uri of the expanded node name.
+                It works in a similar way to local-name() regarding the node-set argument.
+            </td>
+        <tr class="hidden">
+            <td>name(<em>&lt;node-set?&gt;</em>)</td>
+            <td>
+                Returns the qualified node name. Handles node-set like other functions.
+                It will be the same as local-name() except for element and attribute nodes.
+                The qualified name must match the expanded-name in regards to XML namespaces in effect.
+                This is typically the namespace as declared in the XML source, however, some implementations may
+                handle this differently.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class='function-table'>
+    <thead>
+        <tr><th class="show-hide-rows" colspan=2>&sect; String Functions</th></tr>
+    </thead>
+    <tbody>
+        <tr class="hidden">
+            <td>string(<em>&lt;object?&gt;</em>)</td>
+            <td>
+                string conversion rules:
+                <br>
+                <ul>
+                    <li>NaN is converted to string 'NaN'</li>
+                    <li>positive and negative 0 are converted to string '0'</li>
+                    <li>positive or negative Infinity are converted to'(-)Infinity'</li>
+                    <li>Booleans are converted to string 'true' or 'false'</li>
+                    <li>integers are converted to a decimal Number without leading 0s or decimal point</li>
+                    <li>Non-integers are converted to Numbers with a decimal point and at least one digit on
+                        each side of the decimal point with an optional '-'.
+                        There cannot be extra leading or trailing 0s.
+                    </li>
+                    <li>other types may define their own rules for string conversion</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="hidden">
+            <td>concat(<em>&lt;**string&gt;</em>)</td>
+            <td>concats a list of strings</td>
+        </tr>
+        <tr class="hidden">
+            <td>starts-with(<em>&lt;string, string&gt;</em>)</td>
+            <td>true if first argument starts with second, otherwise false</td>
+        </tr>
+        <tr class="hidden">
+            <td>contains(<em>&lt;string, string&gt;</em>)</td>
+            <td>true if first argument contains second, otherwise false</td>
+        </tr>
+        <tr class="hidden">
+            <td>substring-before(<em>&lt;string, string&gt;</em>)</td>
+            <td>
+                <code>substring-before("1999/04/01","/")</code> returns 1999
+                <br>
+                Returns substring of first argument that precedes the first occurence of second argument in the first argument,
+                or an empty string.
+            </td>
+        <tr class="hidden">
+            <td>substring-after(<em>&lt;string, string&gt;</em>)</td>
+            <td>
+                <code>substring-after("1999/04/01","/")</code> returns 04/01
+                <br>
+                Returns substring of first argument that follows the first occurence of second argument in the first argument,
+                or an empty string.
+            </td>
+        </tr>
+        <tr class="hidden">
+            <td>substring(<em>&lt;string, number, number?&gt;</em>)</td>
+            <td>
+                <code>substring("12345",2,3)</code> returns 234
+                <br>
+                Returns substring of first argument starting at 1 based position of second argument with length of third argument.
+                If the 3rd argument is omitted, returns substring from starting position to the end of the string.
+            </td>
+        </tr>
+        <tr class="hidden">
+            <td>string-length(<em>&lt;string?&gt;</em>)</td>
+            <td>Returns number of characters in a string or the context node converted to a string (string-value).</td>
+        </tr>
+        <tr class="hidden">
+            <td>normalize-space(<em>&lt;string?&gt;</em>)</td>
+            <td>
+                Returns string (or string value of context node) with leading and trailing whitespace removed
+                and all other whitespace reduced to a single space.
+            </td>
+        </tr>
+        <tr class="hidden">
+            <td>translate(<em>&lt;string, string, string&gt;</em>)</td>
+            <td>
+                <code>translate("bar","abc","ABC")</code> returns BAr
+                <br>
+                Returns first string with ocurrences of second string
+                replaced by the characters at the corresponding position in the third string.
+                <br>
+                If there's a character in the second string with no corresponding character in the third string,
+                that character is removed from the first string.
+                <br>
+                <code>translate("--aaa--","abc-","ABC")</code> returns "AAA"
+                <br>
+                If a character appears more than once in the second string, the first ocurrence determines the replacement.
+                If the third string is longer than the second extra characters are ignored.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class='function-table'>
+    <thead>
+        <tr><th class="show-hide-rows" colspan=2>&sect; Boolean Functions</th></tr>
+    </thead>
+    <tbody>
+        <tr class="hidden">
+            <td>boolean(<em>&lt;object?&gt;</em>)</td>
+            <td>converts argument to booean according to these rules:
+                <br>
+                <ul>
+                    <li>a number is true if it's not 0, -0 or NaN</li>
+                    <li>a node-set is true if it's not empty</li>
+                    <li>a string is true if its length is non-zero</li>
+                    <li>an object of a type other than the four basic types is converted to a boolean
+                    in a way dependent on that type</li>
+                </ul>
+        </tr>
+        <tr class="hidden">
+            <td>not(<em>&lt;boolean&gt;</em>)</td>
+            <td>returns boolean value of argument</td>
+        </tr>
+        <tr class="hidden">
+            <td>true()</td>
+            <td>returns true</td>
+        </tr>
+        <tr class="hidden">
+            <td>false()</td>
+            <td>returns false</td>
+        </tr>
+        <tr class="hidden">
+            <td>lang(<em>&lt;string&gt;</em>)</td>
+            <td>
+                Returns true if the lang attribute of the context node matches the argument or is a sublanguage of it.
+                The language is determined by the xml:lang attribute on the context node or it's nearest ancestor.
+                If there is no lang attribute (e.g. xml:lang="en-us"), returns false.
+                Matching is case insensitive.
+                Sublanguages are matched using a - separator.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class='function-table'>
+    <thead>
+        <tr><th class="show-hide-rows" colspan=2>&sect; Number Functions</th></tr>
+    </thead>
+    <tbody>
+        <tr class="hidden">
+            <td>number(<em>&lt;object?&gt;</em>)</td>
+            <td>
+                Converts argument to a number using these rules:
+                <ul>
+                    <li>A string, which may contain whitespace or a minus sign, is converted to an
+                        IEEE 754 number that is nearest (according to the IEEE 754 round-to-nearest rule)
+                        to the mathematical value represented by the string.
+                        Any other string is converted to NaN</li>
+                    <li>boolean true is converted to 1; boolean false is converted to 0</li>
+                    <li>A node-set is first converted to a string as if by a call to the string function and then
+                        converted in the same way as a string argument.</li>
+                    <li>An object of a type other than the four basic types is converted to a number
+                        in a way that is dependent on that type.</li>
+                </ul>
+        </tr>
+        <tr class="hidden">
+            <td>sum(<em>&lt;node-set&gt;</em>)</td>
+            <td>Returns sum of nodes after converting the string-value of each node to a number.</td>
+        </tr>
+        <tr class="hidden">
+            <td>floor(<em>&lt;number&gt;</em>)</td>
+            <td>Returns the largest positive integer not greater than the argument</td>
+        </tr>
+        <tr class="hidden">
+            <td>ceiling(<em>&lt;number&gt;</em>)</td>
+            <td>Returns the smallest integer (towards negative infinity) not less than the argument</td>
+        </tr>
+        <tr class="hidden">
+            <td>round(<em>&lt;number&gt;</em>)</td>
+            <td>Rounds number to closest whole integer. Rounds up if there's any ambiguity.
+                Returns NaN if argument is NaN.
+                If 0 > argument >= -0.5 returns 0.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

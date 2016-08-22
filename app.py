@@ -42,6 +42,12 @@ def function_calls():
     return render_template('function_calls.html', title='Function Calls')
 
 
+@app.route('/functionreference')
+def function_reference():
+    return render_template('function_reference.html', title='Function Reference')
+
+
+
 if __name__ == '__main__':
     app.config['DEBUG'] = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
