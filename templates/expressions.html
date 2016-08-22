@@ -1,41 +1,38 @@
 {% extends 'base.html' %}
 {% block main %}
 <h3>The primary syntactic construct in XPath is the expression.</h3>
-<p>The most important kind of expression is a <a href="{{ url_for('location_paths') }}"><strong>location path</strong></a>.</p>
-
+<p>
+    The most important kind of expression is a <a href="{{ url_for('location_paths') }}"><strong>location path</strong></a>.
+</p>
 <br>
-
-<p>An <strong>expression</strong> is evaluated to yield an <a href="{{ url_for('reference') }}#object-types">object</a></p>
-
+<p>
+    An <strong>expression</strong> is evaluated to yield an <a href="{{ url_for('reference') }}#object-types">object</a>
+</p>
 <p>
     Expression evaluation occurs with respect to a <a href="{{ url_for('reference') }}#context">context</a>.
 </p>
 
-<h3 class='question'>WTF is an expression and how do I use one?</h3>
-
-<p>The value of a variable is an object. Like with expression value types.</p>
 <p>
-    <strong>Functions</strong> accept 0 or more arguments and return a single result.
-    See <strong>core function library</strong>.
+    <strong>Functions</strong> are expressions that accept zero or more arguments and return a single result.
+    See the <a href="{{ url_for('function_reference') }}">function reference</a>.
 </p>
+<p>The value of a variable is an object. </p>
 <p>
-    Arguments and results must one of the 4 basic types.
+    Arguments, results and variables must one of the 4 basic <a href="{{ url_for('reference') }}#types">types</a>.
 </p>
-<p>Namespace is mapping from prefixes to URIs</p>
+<p>Namespaces are mapped from prefixes to URIs</p>
 <p>XML special chars must be "escaped" e.g. <em>&amplt;</em></p>
 <p>Literal strings must be quoted with &quot; or &apos;</p>
 <p>
-    Use <em>&amp;quot;</em> or <em>&amp;apos;</em> to avoid confusing end of attribute.
+    Use <em>&amp;quot;</em> or <em>&amp;apos;</em> to avoid confusion with the end of an attribute.
     Or use alternating single and double quotes.
 </p>
-<p>Whitespace is allowed between expression token</p>
-
+<p>Whitespace is allowed between expression tokens.</p>
 
 <h4>Subexpressions</h4>
 <p>Variable bindings, function library and namespace are the same as containing function.</p>
 <p>
-    The context node, position and size may be different. Several kinds of expressions change the context node.
+    The context node, position and size may be different, however. Several kinds of expressions change the context node.
     Only <strong>predicates</strong> change the context position and size.
 </p>
-<h3 class='question'>WTF is a predicate?</h3>
 {% endblock %}

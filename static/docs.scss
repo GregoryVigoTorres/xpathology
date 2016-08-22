@@ -1,7 +1,6 @@
 $gray-border: #4B4B4B;
 $hcolor: #6D4B09;
-// $dark-gray: #2E2E2E;
-$header-bg: #3B58DB;
+$header-bg: #2492EA;
 $dark-gray: #53555E;
 $light-gray: #878787;
 $link-color: #318ABD;
@@ -31,22 +30,23 @@ body {
 
 // content area
 #right-col {
-    padding-left: 1rem;
+    padding: 0 3rem 0 1rem;
     flex: 2 1 80%;
 }
 
 header {
     background-color: $header-bg;
     color: white;
-    padding: 0 0 1rem 0;
+    padding: 0 0 1rem 5px;
     margin: 0 0 1rem 0;
 
     h1 {
-        display: inline;
+        display: inline-block;
+        margin-right: 3rem;
     }
 
     code {
-        padding: 0 0 0 3rem;
+        padding: 0 1rem 2px 1rem;
         color: #C5C5C5;
     }
 }
@@ -57,11 +57,11 @@ footer {
     margin: 3rem 0 0 0;
     border-top: 2px solid $gray-border;
     font-size: 14px;
+}
 
-    #w3c-status, #w3c-source-link {
-        border: 1px solid $gray-border;
-        padding: 1rem;
-    }
+.w3c-box {
+    border: 1px solid $gray-border;
+    padding: 1rem;
 }
 
 a {
@@ -151,7 +151,6 @@ th {
 }
 
 .function-table {
-
     td ul {
         list-style: disc outside;
         li {
