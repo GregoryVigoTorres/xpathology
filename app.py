@@ -49,6 +49,9 @@ def function_reference():
     return render_template('function_reference.html', title='Function Reference')
 
 
+def create_app():
+    return app
+
 
 if __name__ == '__main__':
     app.config['DEBUG'] = True
