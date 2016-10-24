@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -51,4 +53,4 @@ def function_reference():
 if __name__ == '__main__':
     app.config['DEBUG'] = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run()
+    app.run(port=5555)
