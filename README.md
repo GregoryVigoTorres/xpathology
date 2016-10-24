@@ -11,7 +11,7 @@ Gregory Vigo Torres, 2016
 
 ---
 
-###The original document status is as follows:###
+####The original XPath specification document status is as follows:####
 
 W3C Recommendation 16 November 1999, revised 7 September 2015
 
