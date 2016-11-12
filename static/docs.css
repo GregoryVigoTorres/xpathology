@@ -104,7 +104,7 @@ td:first-of-type {
 .show-hide-rows {
   cursor: default;
   font-family: "BoldMono", sans-serif;
-  padding-left: 2rem; }
+  font-size: 1.2rem; }
   .show-hide-rows:hover {
     text-decoration: underline; }
 
