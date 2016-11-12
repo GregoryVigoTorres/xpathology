@@ -58,8 +58,7 @@ a {
   font-weight: 800; }
 
 h1, h2, h3, strong {
-  font-family: "BoldMono", sans-serif;
-  font-weight: 800; }
+  font-family: "BoldMono", sans-serif; }
 
 h1 {
   margin: 0 0 0 0; }
@@ -83,7 +82,8 @@ code {
   background-color: black;
   color: #74D561;
   padding: 2px;
-  font-family: "MediumMono", monospace; }
+  font-family: "MediumMono", monospace;
+  font-size: 85%; }
 
 .hidden {
   display: none; }
@@ -91,7 +91,7 @@ code {
 table {
   border-collapse: collapse; }
   table td {
-    border-bottom: 3px solid #4B4B4B;
+    border-bottom: 3px solid #878787;
     padding: 7px 0 7px 0; }
 
 th {
@@ -101,9 +101,6 @@ td:first-of-type {
   white-space: nowrap;
   padding-right: 1.5rem; }
 
-.function-table td ul {
-  list-style: disc outside; }
-
 .show-hide-rows {
   cursor: default;
   font-family: "BoldMono", sans-serif;
@@ -111,12 +108,23 @@ td:first-of-type {
   .show-hide-rows:hover {
     text-decoration: underline; }
 
-.location-path-table {
+.location-path-table, #axes-table, .function-table {
   margin: 0 7rem 5rem 0; }
-  .location-path-table td:nth-child(2) {
+  .location-path-table td:nth-child(1), #axes-table td:nth-child(1), .function-table td:nth-child(1) {
+    color: #000;
+    font-family: "BoldMono"; }
+  .location-path-table td:nth-child(2), #axes-table td:nth-child(2), .function-table td:nth-child(2) {
     font-size: 85%; }
-  .location-path-table .section-header {
+  .location-path-table .section-header, #axes-table .section-header, .function-table .section-header {
     color: #6D4B09;
     font-family: "BoldMono", sans-serif; }
+
+.function-table {
+  margin: 0 7rem 1rem 0; }
+  .function-table td ul {
+    list-style: disc outside; }
+
+#axes-table td:nth-child(1) {
+  padding-right: 4rem; }
 
 /*# sourceMappingURL=docs.css.map */
